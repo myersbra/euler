@@ -4,13 +4,17 @@
 ;;;
 ;;; What is the largest prime factor of the number 600851475143?
 
-(define (sum input primeFactor highestPrimeFactor)
-  (if (< highestPrimeFactor input)
-      (if (= (modulo input primeFactor) 0)
-           (if (> primeFactor highestPrimeFactor)
-               (sum (floor (/ input primefactor)) 2 primeFactor) 
-               (sum input (+ 1 primeFactor) highestPrimeFactor))
-           (sum input (+ 1 primeFactor) highestPrimeFactor))
-      highestPrimeFactor))
+;; i   = input
+;; pf  = prime factor
+;; hpf = highest prime factor
 
-(sum 600851475143 2 2) 
+(define (sum i pf hpf)
+  (if (< hpf i)
+      (if (= (modulo i pf) 0)
+          (if (>= pf hpf)
+              (sum (floor (/ i pf)) 2 pf)
+              (sum (floor (/ i pf)) (+ 1 pf) hpf))
+          (sum i (+ 1 pf) hpf))
+      hpf))
+
+(sum 600851475143 2 2 )
