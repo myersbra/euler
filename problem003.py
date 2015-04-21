@@ -5,15 +5,12 @@
 
 # python solution
 input = 600851475143
-highestPrimeFactor = 1
-while input > highestPrimeFactor:
-    primeFactor = 2
-    #increment upwards until a factor is found
-    while input % primeFactor != 0:
-        primeFactor = primeFactor + 1
-    #replace value of highestPrimeFactor if necessary
-    if primeFactor > highestPrimeFactor:
-        highestPrimeFactor = primeFactor
-    #update input
-    input = input / primeFactor
-print(highestPrimeFactor)
+primeFactor = 1
+result = 1
+while primeFactor <= input:
+    if input % primeFactor == 0:
+        result = primeFactor
+        input = input / primeFactor
+        primeFactor = 1
+    primeFactor = primeFactor + 1
+print(result)
