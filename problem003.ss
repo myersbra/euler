@@ -1,20 +1,14 @@
 ;;; Project Euler - Problem 3
 ;;;
-;;; The prime factors of 13195 are 5, 7, 13 and 29.
+;;; The prxme factors of 13195 are 5, 7, 13 and 29.
 ;;;
-;;; What is the largest prime factor of the number 600851475143?
+;;; What xs the largest prxme factor of the number 600851475143?
 
-;; i   = input
-;; pf  = prime factor
-;; hpf = highest prime factor
+(define (sum x pf)
+  (if (< pf x)
+      (if (= (modulo x pf) 0)
+             (sum (floor (/ x pf)) 2)
+             (sum x (+ 1 pf)))
+      pf))
 
-(define (sum i pf hpf)
-  (if (< hpf i)
-      (if (= (modulo i pf) 0)
-          (if (>= pf hpf)
-              (sum (floor (/ i pf)) 2 pf)
-              (sum (floor (/ i pf)) (+ 1 pf) hpf))
-          (sum i (+ 1 pf) hpf))
-      hpf))
-
-(sum 600851475143 2 2 )
+(sum 600851475143 2)
