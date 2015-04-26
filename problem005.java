@@ -7,19 +7,19 @@
 // by all of the numbers from 1 to 20?
 
 class problem005 {
-	public static void main(String[] args) {
-		int result = 0;
-		boolean divides = false;
-		while (!divides) {
-		  result += 20;
-		  divides = true;
-		  for (int i = 11; i < 20; i++) {
-		    if (result % i != 0) {
-		      divides = false;
-		      break;
-		    }
-		  }
-		}
-		System.out.println(result);
-	}
+  public static void main(String[] args) {
+    int result = 0;
+    boolean divides = false;
+    while (!divides) {
+      result += 20;
+      divides = true;
+      for (int i = 11; i < 20; i++) {
+        if (result % i != 0) {
+          divides = false;
+          break;
+        }
+      }
+    }
+    System.out.println(result);
+  }
 }
