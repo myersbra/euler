@@ -7,7 +7,7 @@
 
 class problem004 {
   public static void main(String[] args) {
-    int highestPalindrome = 0;
+    int highest = 0;
     int result, rev;
     for (int x = 100; x < 1000; x++) {
       for (int y = x; y < 1000; y++) {
@@ -17,11 +17,11 @@ class problem004 {
           rev = (rev * 10) + (result % 10);
           result /= 10;
         }
-        if (rev == x * y && rev > highestPalindrome) {
-          highestPalindrome = rev;
+        if (rev == x * y && rev > highest) {
+          highest = rev;
         }
       }
     }
-    System.out.println(highestPalindrome);
+    System.out.println(highest);
   }
 }
