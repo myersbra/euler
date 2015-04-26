@@ -10,10 +10,13 @@ class problem007 {
     int result = 2, counter = 1;
     boolean isPrime;
     while (counter < 10001) {
-      isPrime = true; // assume until proven false
       result++;
+      isPrime = true; // assume until proven false
       for (int i = 2; i <= Math.sqrt((double)result); i++) {
-        if (result % i == 0) isPrime = false;
+        if (result % i == 0) {
+          isPrime = false;
+          break;
+        }
       }
       if (isPrime) counter++;
     }
