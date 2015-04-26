@@ -1,7 +1,7 @@
 // Largest Product in a Series
 // 
 // Find the greatest product of five consecutive digits
-// in the 1000-digit number in problem008.txt.
+// in the 1000-digit number in problem008.txt
 
 import java.io.*;
 import java.util.*;
