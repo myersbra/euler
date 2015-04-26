@@ -15,4 +15,4 @@ class problem001 {
     }
     System.out.println(result);
   }
-}Q
+}
