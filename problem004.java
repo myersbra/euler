@@ -5,21 +5,23 @@
 //
 // Find the largest palindrome made from the product of two 3-digit numbers.
 
-int highestPalindrome = 0;
-for (int x = 100; x < 1000; x++) {
-    for (int y = x; y < 1000; y++) {
-        int result = x * y;
-        //string form to work with individual digits
-        String resultString = Integer.toString(result);
-        boolean isPalindrome = true; //assume until proven false
-        for (int i = 0; i < (resultString.length() / 2); i++) {
-            if (resultString.charAt(i) != resultString.charAt(resultString.length() - 1 - i)) {
-                isPalindrome = false;
-            }
+class problem004 {
+  public static void main(String[] args) {
+    int highestPalindrome = 0;
+    int result, rev;
+    for (int x = 100; x < 1000; x++) {
+      for (int y = x; y < 1000; y++) {
+        rev = 0;
+        result = x * y;
+        while (result > 0) {
+          rev = (rev * 10) + (result % 10);
+          result /= 10;
         }
-        if (isPalindrome && result > highestPalindrome) {
-            highestPalindrome = result;
+        if (rev == x * y && rev > highestPalindrome) {
+          highestPalindrome = rev;
         }
+      }
     }
+    System.out.println(highestPalindrome);
+  }
 }
-System.out.print(highestPalindrome);
