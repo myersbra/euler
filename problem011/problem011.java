@@ -1,7 +1,7 @@
 // Largest Product in a Grid
 // 
-// In the 20×20 grid below, four numbers along
-// a diagonal line have been marked in red.
+// In the 20×20 grid in problem011.txt, four numbers
+// along a diagonal line have been marked in red.
 // 
 // The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 // 
@@ -13,7 +13,6 @@ import java.util.*;
 
 class problem011 {
   public static void main(String[] args) {
-
     try {
       // read file into 2D Integer list
       Scanner s = new Scanner(new File("problem011.txt"));

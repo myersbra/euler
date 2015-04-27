@@ -9,7 +9,7 @@ import java.util.*;
 class problem008 {
   public static void main(String[] args) {
     try {
-      // read filelongo Integer List
+      // read file into Integer List
       BufferedReader br = new BufferedReader(new FileReader("problem008.txt"));
       List<Integer> list = new ArrayList<>();
       String line;
