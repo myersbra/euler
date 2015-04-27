@@ -4,16 +4,18 @@
 // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-#include <stdio.h>
-
-int main() {
-  int i = 1, j = 2, k = i + j;
-  int result = j;
-  while (k < 4000000) {
-    if (k % 2 == 0) result += k;
-    i = j;
-    j = k;
-    k = i + j;
+class problem002 {
+  public static void main(String[] args) {
+    int i = 1, j = 2, k = i + j;
+    int result = j;
+    while (k < 4000000) {
+      if (k % 2 == 0) {
+        result += k;
+      }
+      i = j;
+      j = k;
+      k = i + j;
+    }
+    System.out.println(result);
   }
-  printf("%d\n", result);
 }
