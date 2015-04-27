@@ -21,9 +21,8 @@ int main() {
       mpz_add_ui(primeFactor, primeFactor, 1);
       mpz_mod(mod, input, primeFactor);
     } while (mpz_cmp_ui(mod, 0));
-    if (mpz_cmp(input, highestPrimeFactor)) mpz_set(highestPrimeFactor, primeFactor);
-    mpz_fdiv_q(input, input, primeFactor);
+      mpz_fdiv_q(input, input, primeFactor);
   }
-  mpz_out_str(stdout, 10, highestPrimeFactor);
+  mpz_out_str(stdout, 10, primeFactor);
   printf("\n");
 }

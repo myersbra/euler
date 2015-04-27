@@ -12,7 +12,7 @@ class problem007 {
     while (counter < 10001) {
       result++;
       isPrime = true; // assume until proven false
-      for (int i = 2; i <= Math.sqrt((double)result); i++) {
+      for (int i = 2; i <= Math.sqrt(result); i++) {
         if (result % i == 0) {
           isPrime = false;
           break;

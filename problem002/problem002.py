@@ -13,9 +13,9 @@ j = 2
 k = i + j
 result = j # to include 2 in final sum
 while k < 4000000:
-    if k % 2 == 0:
-        result += k
-    i = j
-    j = k
-    k = i + j
+  if k % 2 == 0:
+    result += k
+  i = j
+  j = k
+  k = i + j
 print(result)
