@@ -1,10 +1,20 @@
 # Largest Product in a Grid
-#
-# In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
-#
+# 
+# In the 20×20 grid in problem011.txt, four numbers
+# along a diagonal line have been marked in red.
+# 
 # The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
-#
-# What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
+# 
+# What is the greatest product of four adjacent numbers in the same
+# direction (up, down, left, right, or diagonally) in the 20×20 grid?
+
+# read file int 2D array
+array = []
+with open('problem011.txt') as f:
+    for line in f:
+        arr = line.rstrip().split(" ")
+        list = [int(i) for i in arr]
+        array.append(list)
 
 largestProduct = 0
 # check horizontal products
