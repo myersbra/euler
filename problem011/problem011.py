@@ -11,10 +11,10 @@
 # read file int 2D array
 array = []
 with open('problem011.txt') as f:
-    for line in f:
-        arr = line.rstrip().split(" ")
-        list = [int(i) for i in arr]
-        array.append(list)
+  for line in f:
+    arr = line.rstrip().split(" ")
+    list = [int(i) for i in arr]
+    array.append(list)
 
 largestProduct = 0
 # check horizontal products
