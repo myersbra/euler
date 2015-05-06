@@ -17,9 +17,7 @@ class problem004 {
           rev = (rev * 10) + (result % 10);
           result /= 10;
         }
-        if (rev == x * y && rev > highest) {
-          highest = rev;
-        }
+        if (rev == x * y && rev > highest) highest = rev;
       }
     }
     System.out.println(highest);

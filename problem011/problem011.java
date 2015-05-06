@@ -38,9 +38,7 @@ class problem011 {
           int product = list.get(y).get(x);
           for (int i = x + 1; i < x + 4; i++) {
             product *= list.get(y).get(i);
-          if (product > largestProduct) {
-            largestProduct = product;
-          }
+          if (product > largestProduct) largestProduct = product;
           }
         }
       }
@@ -51,9 +49,7 @@ class problem011 {
           int product = list.get(y).get(x);
           for (int i = y + 1; i < y + 4; i++) {
             product *= list.get(i).get(x);
-          if (product > largestProduct) {
-            largestProduct = product;
-          }
+          if (product > largestProduct) largestProduct = product;
           }
         }
       }
@@ -64,9 +60,7 @@ class problem011 {
           int product = list.get(y).get(x);
           for (int i = 1; i < 4; i++) {
             product *= list.get(y + i).get(x + i);
-          if (product > largestProduct) {
-            largestProduct = product;
-          }
+          if (product > largestProduct) largestProduct = product;
           }
         }
       }
@@ -76,9 +70,7 @@ class problem011 {
           int product = list.get(y).get(x);
           for (int i = 1; i < 4; i++) {
             product *= list.get(y - i).get(x + i);
-          if (product > largestProduct) {
-            largestProduct = product;
-          }
+          if (product > largestProduct) largestProduct = product;
           }
         }
       }

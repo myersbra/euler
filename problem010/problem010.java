@@ -15,9 +15,7 @@ class problem010 {
           break;
         }
       }
-      if (isPrime) {
-        sum += i;
-      }
+      if (isPrime) sum += i;
     }
     System.out.println(sum);
   }

@@ -35,13 +35,9 @@ class problem023 {
           sum += i / j;
         }
       }
-      if (Math.sqrt(i) % 1 == 0.0) {
-        sum += Math.sqrt(i); // to ensure root is counted
-      }
-      sum -= i; // to remove the complement of 1 (1 * i = i, so i will be included in the sum at this point)
-      if (sum > i) {
-        list.add(i);
-      }
+      if (Math.sqrt(i) % 1 == 0.0) sum += Math.sqrt(i); // to ensure root is counted
+      sum -= i; // to remove complement of 1 (1 * i = i, so i is included in sum at this point)
+      if (sum > i) list.add(i);
     }
     
     List<Boolean> trueList = new ArrayList<>();
@@ -53,17 +49,14 @@ class problem023 {
       for (int c = b; c < list.size(); c++) {
         if (list.get(b) + list.get(c) < 28124) {
           trueList.set(list.get(b) + list.get(c), true);
-        } else {
-          break;
         }
+        else break;
       }
     }
 
     int sum = 0;
     for (int k = 0; k < 28124; k++) {
-      if (trueList.get(k) == false) {
-        sum += k;
-      }
+      if (trueList.get(k) == false) sum += k;
     }
     System.out.println(sum);
   }

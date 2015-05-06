@@ -19,79 +19,42 @@ class problem017 {
       if (i % 100 < 10 || i % 100 >= 20) {
         //find 1s digit for non teen numbers
         char digit = num.charAt(num.length() - 1);
-        if (digit == '1' || digit == '2' || digit == '6') {
-          sum += 3;
-        }
-        if (digit == '4' || digit == '5' || digit == '9') {
-          sum += 4;
-        }
-        if (digit == '3' || digit == '7' || digit == '8') {
-          sum += 5;
-        }
-      } else {
+        if (digit == '1' || digit == '2' || digit == '6') sum += 3;        
+        if (digit == '4' || digit == '5' || digit == '9') sum += 4;        
+        if (digit == '3' || digit == '7' || digit == '8') sum += 5;        
+      }
+      else {
         //find 1s digit for teen numbers
         char digit = num.charAt(num.length() - 1);
-        if (digit == '0') {
-          sum += 3;
-        }
-        if (digit == '1' || digit == '2') {
-          sum += 6;
-        }
-        if (digit == '5' || digit == '6') {
-          sum += 7;
-        }
-        if (digit == '3' || digit == '4' || digit == '8'
-            || digit == '9') {
-          sum += 8;
-        }
-        if (digit == '7') {
-          sum += 9;
-        }
+        if (digit == '0') sum += 3;        
+        if (digit == '1' || digit == '2') sum += 6;        
+        if (digit == '5' || digit == '6') sum += 7;        
+        if (digit == '3' || digit == '4'|| digit == '8' || digit == '9') sum += 8;
+        if (digit == '7') sum += 9;        
       }
       if (i % 100 >= 20) {
         //find 10s digit for non teen numbers
         char digit = num.charAt(num.length() - 2);
-        if (digit == '4' || digit == '5' || digit == '6') {
-          sum += 5;
-        }
-        if (digit == '2' || digit == '3' || digit == '8'
-            || digit == '9') {
-          sum += 6;
-        }
-        if (digit == '7') {
-          sum += 7;
-        }
+        if (digit == '4' || digit == '5' || digit == '6') sum += 5;        
+        if (digit == '2' || digit == '3' || digit == '8' || digit == '9') sum += 6;        
+        if (digit == '7') sum += 7;        
       }
       if (i >= 100 && i % 100 != 0) {
         //find 100s digit
         char digit = num.charAt(num.length() - 3);
         //include "hundred and"
-        if (digit == '1' || digit == '2' || digit == '6') {
-          sum += 13;
-        }
-        if (digit == '4' || digit == '5' || digit == '9') {
-          sum += 14;
-        }
-        if (digit == '3' || digit == '7' || digit == '8') {
-          sum += 15;
-        }
+        if (digit == '1' || digit == '2' || digit == '6') sum += 13;        
+        if (digit == '4' || digit == '5' || digit == '9') sum += 14;        
+        if (digit == '3' || digit == '7' || digit == '8') sum += 15;        
       }
       if (i >= 100 && i % 100 == 0) {
         char digit = num.charAt(num.length() - 3);
         //include "hundred" but no "and"
-        if (digit == '1' || digit == '2' || digit == '6') {
-          sum += 10;
-        }
-        if (digit == '4' || digit == '5' || digit == '9') {
-          sum += 11;
-        }
-        if (digit == '3' || digit == '7' || digit == '8') {
-          sum += 12;
-        }
+        if (digit == '1' || digit == '2' || digit == '6') sum += 10;        
+        if (digit == '4' || digit == '5' || digit == '9') sum += 11;        
+        if (digit == '3' || digit == '7' || digit == '8') sum += 12;        
         if (i >= 1000) {
-          //add "one thousand"
-          sum += 11;
-        }
+        //add "one thousandsum += 11;        
       }
     }
     System.out.println(sum);
