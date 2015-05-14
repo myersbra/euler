@@ -14,28 +14,28 @@
 import java.util.*;
 
 class problem032 {
+  public static List<Integer> getDigits(int num) {
+    List<Integer> digits = new ArrayList<>();
+    while (num > 0) {
+      digits.add(num % 10);
+      num /=10;
+    }
+    return digits;
+  }
+
   public static void main(String[] args) {
     int result = 0;
     List<Integer> productList = new ArrayList<>();
     for (int i = 1; i <= 98; i++) {
-      // if (i % 10 == (i / 10) % 10) continue;
-      for (int j = 123; j <= 10000; j++) {
-        if (j % 10 == (j / 10) % 10 || j % 10 == (j / 100) % 10 || (j / 10) % 10 == (j / 100) % 10) continue;
+      for (int j = 123; j <= 9876; j++) {
         int product = i * j;
-        // if (product >= 10000) break;
+        if (product >= 10000) break;
         List<Integer> digits = new ArrayList<>();
         for (int k = 1; k <= 9; k++) digits.add(k);
-        digits.remove(new Integer(i % 10));
-        digits.remove(new Integer((i / 10) % 10));
-        digits.remove(new Integer(j % 10));
-        digits.remove(new Integer((j / 10) % 10));
-        digits.remove(new Integer((j / 100) % 10));
-        digits.remove(new Integer(product % 10));
-        digits.remove(new Integer((product / 10) % 10));
-        digits.remove(new Integer((product / 100) % 10));
-        digits.remove(new Integer((product / 1000) % 10));
+        digits.removeAll(getDigits(i));
+        digits.removeAll(getDigits(j));
+        digits.removeAll(getDigits(product));
         if (digits.size() ==  0 && !productList.contains(product)) {
-          System.out.println(i + " * " + j + " = " + i * j);
           result += product;
           productList.add(product);
         }
