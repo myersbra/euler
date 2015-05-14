@@ -8,8 +8,8 @@ class problem010 {
     long sum = 2;
     boolean isPrime = true;
     for (int i = 3; i < 2000000; i += 2) {
+      isPrime = true; // assume until proven false
       for (int j = 2; j <= Math.sqrt(i) + 1; j++) {
-        isPrime = true; // assume until proven false
         if (i % j == 0) {
           isPrime = false;
           break;

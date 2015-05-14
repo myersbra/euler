@@ -9,12 +9,8 @@ class problem003 {
     long highestPrimeFactor = 1L;
     while (input > highestPrimeFactor) {
       long primeFactor = 2L;
-      while (input % primeFactor != 0) {
-        primeFactor++;
-      }
-      if (primeFactor > highestPrimeFactor) {
-        highestPrimeFactor = primeFactor;
-      }
+      while (input % primeFactor != 0) primeFactor++;
+      if (primeFactor > highestPrimeFactor) highestPrimeFactor = primeFactor;
       input = input / primeFactor;
     }
     System.out.println(highestPrimeFactor);
