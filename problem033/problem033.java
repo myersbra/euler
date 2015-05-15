@@ -45,7 +45,6 @@ class problem033 {
   public static void main(String[] args) {
     int finalNum = 1;
     int finalDenom = 1;
-    List<Double> result = new ArrayList<>();
     for (int denom = 12; denom <= 99; denom++) {
       for (int num = 11; num < denom; num++) {
         List<Integer> sharedDigits = getSharedDigits(num, denom);
@@ -56,7 +55,6 @@ class problem033 {
           if (newNum / newDenom == (num + 0.0) / denom) {
             finalNum *= num;
             finalDenom *= denom;
-            result.add(newNum/newDenom);
           }
         }
       }
