@@ -26,7 +26,8 @@
 class problem027 {
   public static boolean isPrime(int num) {
     num = Math.abs(num);
-    boolean result = true;
+    if (num > 1) boolean result = true;
+    else result = false;
     for (int i = 2; i <= Math.sqrt(num); i++) {
       if (num % i == 0) {
         result = false;
