@@ -8,16 +8,28 @@
 // By considering the terms in the Fibonacci sequence whose values do not
 // exceed four million, find the sum of the even-valued terms.
 
+
 class problem002 {
+  private static int n1 = 0;
+  private static int n2 = 1;
+  private static int sum = 0;
+  private static int MAXVALUE = 4000000;
+  
+  public static void incrementValues() {
+    int temp = n1 + n2;
+    n1 = n2;
+    n2 = temp;
+  }
+  
+  public static void incrementSum() {
+    if (n2 % 2 == 0) sum += n2;
+  }
+  
   public static void main(String[] args) {
-    int i = 1, j = 2, k = i + j;
-    int result = j;
-    while (k < 4000000) {
-      if (k % 2 == 0) result += k;
-      i = j;
-      j = k;
-      k = i + j;
+    while (n2 < MAXVALUE) {
+      incrementValues();
+      incrementSum();
     }
-    System.out.println(result);
+    System.out.println(sum);
   }
 }
