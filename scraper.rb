@@ -1,3 +1,4 @@
+#!/usr/bin/ruby
 # File to scrape answers from solved Project Euler problems
 # and save them in their respective problem files
 
@@ -34,5 +35,5 @@ table.each do |t|
   end
   name = dir + ".txt"
 
-  File.open("#{dir}/answer.txt", 'w') { |f| f.write(answer) }
+  File.open("#{dir}/answer.txt", 'w') { |f| f.write("#{answer}\n") }
 end

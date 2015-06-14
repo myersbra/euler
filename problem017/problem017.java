@@ -54,9 +54,11 @@ class problem017 {
         if (digit == '4' || digit == '5' || digit == '9') sum += 11;        
         if (digit == '3' || digit == '7' || digit == '8') sum += 12;        
         if (i >= 1000) {
-        //add "one thousandsum += 11;        
+          //add "one thousandsum += 11;        
+        }
       }
     }
     System.out.println(sum);
   }
 }
+

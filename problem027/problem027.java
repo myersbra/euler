@@ -7,13 +7,13 @@
 // is divisible by 41, and certainly when n = 41, 41² + 41 + 41 is clearly
 // divisible by 41.
 // 
-// The incredible formula  n² − 79n + 1601 was discovered, which produces 80
+// The incredible formula  n^2 − 79n + 1601 was discovered, which produces 80
 //  primes for the consecutive values n = 0 to 79. The product of the
 //  coefficients, −79 and 1601, is −126479.
 // 
 // Considering quadratics of the form:
 // 
-// n² + an + b, where |a| < 1000 and |b| < 1000
+// n^2 + an + b, where |a| < 1000 and |b| < 1000
 // 
 // where |n| is the modulus/absolute value of n
 // 
@@ -26,8 +26,8 @@
 class problem027 {
   public static boolean isPrime(int num) {
     num = Math.abs(num);
-    if (num > 1) boolean result = true;
-    else result = false;
+    boolean result = true;
+    if (num < 1) result = false;
     for (int i = 2; i <= Math.sqrt(num); i++) {
       if (num % i == 0) {
         result = false;
