@@ -26,4 +26,3 @@ while (@values[1] < $MAX) {
 }
 
 print $sum, "\n";
-
