@@ -12,11 +12,10 @@
 # Find the difference between the sum of the squares of the first one
 # hundred natural numbers and the square of the sum.
 
-a = (1..100).to_a
 sum = 0
 squares = 0
 
-a.each do |a|
+(1..100).to_a.each do |a|
   sum += a
   squares += a * a
 end
