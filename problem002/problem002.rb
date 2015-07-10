@@ -8,15 +8,13 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed
 # four million, find the sum of the even-valued terms.
 
-i = 1
-j = 2
-k = i + j
-result = j
+i, j = 0, 1
+result = 0;
+
 loop do
-  result += k if k % 2 == 0
-  i = j
-  j = k
-  k = i + j
-  break if k >= 4000000
+  result += j if j % 2 == 0
+  i, j = j, i + j
+  break if j >= 4000000
 end
+
 puts result
