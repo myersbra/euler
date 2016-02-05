@@ -8,14 +8,11 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed
 # four million, find the sum of the even-valued terms.
 
-i = 1
-j = 2
-k = i + j
-result = j # to include 2 in final sum
-while k < 4000000:
-  if k % 2 == 0:
-    result += k
-  i = j
-  j = k
-  k = i + j
+[i, j] = [1, 2]
+result = 0
+
+while j < 4000000:
+    if j % 2 == 0:
+        result += j
+    [i, j] = [j, (i + j)]
 print(result)
