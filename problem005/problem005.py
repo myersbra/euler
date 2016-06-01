@@ -6,15 +6,22 @@
 # What is the smallest positive number that is evenly
 # divisible by all of the numbers from 1 to 20?
 
-lowerLimit = 1
-upperLimit = 20 # single point of control
+import math
+
+lower_limit = 1
+upper_limit = 20
 result = 0
-isEvenlyDivisible = False
-while not isEvenlyDivisible:
-  result += upperLimit
-  isEvenlyDivisible = True
-  for i in range(lowerLimit, upperLimit + 1):
-    if result % i != 0:
-      isEvenlyDivisible = False
-      break # to save runtime
+is_evenly_divisible = False
+
+divisors = []
+for num in range(upper_limit/2, upper_limit + 1):
+    divisors.append(num)
+
+while not is_evenly_divisible:
+    result += upper_limit
+    is_evenly_divisible = True
+    for i in divisors:
+        if result % i != 0:
+            is_evenly_divisible = False
+            break
 print(result)

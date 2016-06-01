@@ -6,9 +6,11 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
 highest_palindrome = 0
+
 (100...1000).to_a.each do |x|
   (x...1000).to_a.each do |y|
     num = (x * y)
+    next if num % 10 == 0
     if num.to_s == num.to_s.reverse && num > highest_palindrome
       highest_palindrome = num
     end

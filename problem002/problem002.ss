@@ -8,13 +8,13 @@
 ;;; By considering the terms in the Fibonacci sequence whose values do not
 ;;; exceed four million, find the sum of the even-valued terms.
 
-(define (sum w x y z)
-  (if (< x y)
-      (sum x
-           (+ x w)
-           y
-           (+ z (cond ((= (modulo x 2) 0) x)
+(define (sum a b limit sum)
+  (if (< b limit)
+      (sum b
+           (+ a b)
+           limit
+           (+ sum (cond ((= (modulo b 2) 0) b)
                       (else 0))))
-      z))
+      sum))
 
 (sum 1 2 4000000 0)
